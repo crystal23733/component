@@ -6,6 +6,47 @@ class Room {
     this.chair = '의자2';
     this.desk = '책상2';
   }
+
+  set computer(value){
+    if(typeof value === 'object'){
+      this._computer = value;
+    }
+  }
+  get computer(){
+    return this._computer;
+  }
+  set medicine(value){
+    if(typeof value === 'object'){
+      this._medicine = value;
+    }
+  }
+  get medicine(){
+    return this._medicine;
+  }
+  set book(value){
+    if(typeof value === 'object'){
+      this._book = value;
+    }
+  }
+  get book(){
+    return this._book;
+  }
+  set chair(value){
+    if(typeof value === 'string'){
+      this._chair = value;
+    }
+  }
+  get chair(){
+    return this._chair;
+  }
+  set desk(value){
+    if(typeof value === 'string'){
+      this._desk = value;
+    }
+  }
+  get desk(){
+    return this._desk;
+  }
 }
 
 // *root 선택자
