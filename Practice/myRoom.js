@@ -5,6 +5,7 @@ class Room {
     this.book = ['셜록홈즈 시리즈', '스케치북'];
     this.chair = '의자2';
     this.desk = '책상2';
+    this.sound = '소음측정기';
   }
 
   set computer(value){
@@ -46,6 +47,14 @@ class Room {
   }
   get desk(){
     return this._desk;
+  }
+  set sound(value){
+    if(typeof value === 'string'){
+      this._sound = value;
+    }
+  }
+  get sound(){
+    return this._sound;
   }
 }
 
