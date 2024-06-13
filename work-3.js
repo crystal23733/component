@@ -30,10 +30,14 @@ class BasicData {
   }
 }
 
+const root = document.getElementById('root');
+
 const objContent = (tagName, text) => {
+  let contents = [];
   for(const value in text){
-    return `<${tagName}>${text[value]}</${tagName}>`;
+    contents.push(`<${tagName}>${text[value]}</${tagName}>`);
   }
+  return contents.join('');
 }
 
 
@@ -41,28 +45,19 @@ const objContent = (tagName, text) => {
 const component = () => {
   let obj = new BasicData('유호영', 28, '학생');
   
-  const decision = (obj) => {
-    if(obj instanceof BasicData === true){
+  const decision = () => {
+    if(obj instanceof BasicData){
       return true;
     } else {
       return false;
     }
   }
   
-  console.log(objContent('h1', obj));
-  if(decision(obj) === 'true'){
-    console.log('성공')
-    // return `
-    //   <html>
-    //     <head>
-    //       <meta charset='utf-8'>
-    //     </head>
-    //     <body>
-
-    //     </body>
-    //   </html>
-    //   `;
+  if(decision() === true){
+    return `
+          ${objContent('h1', obj)}
+      `;
   } 
 }
 
-component();
+root.innerHTML = component();
